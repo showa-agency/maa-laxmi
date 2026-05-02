@@ -91,6 +91,13 @@ export default function App() {
     }
   ];
 
+  const handleNumberInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d{0,10}$/.test(value)) {
+      setFormData({...formData, contact: value});
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: 'Inter, sans-serif' }}>
       <a
@@ -146,7 +153,7 @@ export default function App() {
 
             <div className="order-1 lg:order-2 bg-white rounded-2xl p-8 shadow-2xl">
               <h2 className="text-2xl mb-2" style={{ color: '#0a2463' }}>Book Your Ride</h2>
-              <p className="text-sm text-gray-500 mb-6">All enquiries are sent directly to admin email</p>
+              <p className="text-sm text-gray-500 mb-6">All enquiries are sent directly to team</p>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm mb-2 text-gray-700">Name</label>
@@ -164,9 +171,9 @@ export default function App() {
                   <input
                     type="tel"
                     value={formData.contact}
-                    onChange={(e) => setFormData({...formData, contact: e.target.value})}
+                    onChange={handleNumberInput}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a2463] bg-white"
-                    placeholder="+91 98765 43210"
+                    placeholder="98765 43210"
                     required
                   />
                 </div>
