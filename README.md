@@ -1,11 +1,29 @@
 
-  # Luxury Taxi Landing Page
+# Luxury Taxi Landing Page (Next.js)
 
-  This is a code bundle for Luxury Taxi Landing Page. The original project is available at https://www.figma.com/design/rVx2h1aZC9KZqETLPxWqGS/Luxury-Taxi-Landing-Page.
+This app now runs on Next.js with an integrated API route for booking enquiry emails.
 
-  ## Running the code
+## Running the code
 
-  Run `npm i` to install the dependencies.
+Run `npm i` to install dependencies.
 
-  Run `npm run dev` to start the development server.
+Run `npm run dev` to start the development server.
+
+## Email API
+
+Submit booking enquiries to:
+
+- `POST /api/send-email`
+
+Required headers and body:
+
+- `x-api-key: <NEXT_PUBLIC_API_KEY or API_KEY>`
+- JSON body: `{ "name": "...", "message": "..." }`
+
+Environment variables used by the API route:
+
+- `EMAIL`
+- `PASSWORD`
+- `MAIL_TO`
+- `API_KEY` (or `NEXT_PUBLIC_API_KEY`)
   

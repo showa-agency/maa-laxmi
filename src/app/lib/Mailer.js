@@ -1,9 +1,9 @@
 async function sendEmail(name, message) {
-    const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/send-email', {
+    const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'x-api-key': import.meta.env.VITE_API_KEY
+            'x-api-key': process.env.NEXT_PUBLIC_API_KEY
         },
         body: JSON.stringify({ name, message }),
     });
