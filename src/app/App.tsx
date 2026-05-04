@@ -82,14 +82,14 @@ export default function App() {
       tag: 'Affordable aur practical city car'
     },
     {
-      image: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Creta/8667/1755765115423/front-left-side-47.jpg?imwidth=420&impolicy=resize',
+      image: 'https://i.pinimg.com/736x/0c/2b/5f/0c2b5f487c9b510672009122d71aef8e.jpg',
       name: 'Hyundai Creta',
-      tag: 'Modern SUV with premium comfort'
+      tag: 'Decorated for special occasions and weddings'
     },
     {
-      image: 'https://www.livemint.com/lm-img/img/2023/06/28/600x338/xuv700_1678622384580_1687933259686.jpeg',
-      name: 'Mahindra XUV700',
-      tag: 'Premium family SUV for highway trips'
+      image: 'https://bakista.in/mysiteadmin/item_uploads/28032025124747-IMG_20221120_104057.jpg',
+      name: 'Maruti Swift',
+      tag: 'Decorated for special occasions and weddings'
     }
   ];
 
