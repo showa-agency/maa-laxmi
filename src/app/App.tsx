@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Phone, CheckCircle, Shield, DollarSign, Clock, Users, Car, Sparkles, MessageCircle } from 'lucide-react';
-import sendMail from './lib/Mailer'
+import sendMail from './lib/Mailer';
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -96,33 +96,42 @@ export default function App() {
   const handleNumberInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (/^\d{0,10}$/.test(value)) {
-      setFormData({...formData, contact: value});
+      setFormData({ ...formData, contact: value });
     }
   };
 
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: 'Inter, sans-serif' }}>
       <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-[#0a2463] focus:px-4 focus:py-2 focus:text-white focus:rounded-md"
+      >
+        Skip to main content
+      </a>
+
+      <a
         href="https://wa.me/919431674083?text=Hi!%20I%20would%20like%20to%20book%20a%20ride"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 hover:shadow-3xl"
         style={{ backgroundColor: '#25D366' }}
-        aria-label="Contact us on WhatsApp"
+        aria-label="Contact Maa Lakshmi Tour and Travels on WhatsApp"
       >
         <MessageCircle className="w-8 h-8 text-white" />
       </a>
 
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-lg md:text-2xl tracking-tight" style={{ color: '#0a2463' }}>
+        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between" aria-label="Primary navigation">
+          <p className="text-lg md:text-2xl tracking-tight" style={{ color: '#0a2463' }}>
             <span style={{ color: '#d4af37' }}>Maa Lakshmi</span> Tour and Travels
-          </div>
+          </p>
           <div className="hidden md:flex items-center gap-8">
             <a href="#home" className="text-gray-700 hover:text-[#0a2463] transition-colors">Home</a>
             <a href="#fleet" className="text-gray-700 hover:text-[#0a2463] transition-colors">Fleet</a>
             <a href="#about" className="text-gray-700 hover:text-[#0a2463] transition-colors">About</a>
-            <button className="flex items-center gap-2 px-6 py-2.5 rounded-lg transition-all hover:opacity-90" style={{ backgroundColor: '#0a2463', color: 'white' }}
+            <button
+              className="flex items-center gap-2 px-6 py-2.5 rounded-lg transition-all hover:opacity-90"
+              style={{ backgroundColor: '#0a2463', color: 'white' }}
               onClick={() => window.location.href = 'tel:+919431674083'}
             >
               <Phone className="w-4 h-4" />
@@ -132,205 +141,224 @@ export default function App() {
         </nav>
       </header>
 
-      <section id="home" className="relative min-h-screen flex items-center pt-20">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1774014772899-637b8fcbaca0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxpbmRpYSUyMGhpZ2h3YXklMjByb2FkJTIwdHJpcCUyMHNjZW5pYyUyMGpvdXJuZXl8ZW58MXx8fHwxNzc3NjI1Nzg2fDA&ixlib=rb-4.1.0&q=80&w=1080)'
-          }}
-        >
-          <div className="absolute inset-0" style={{ backgroundColor: 'rgba(10, 36, 99, 0.85)' }}></div>
-        </div>
+      <main id="main-content">
+        <section id="home" className="relative min-h-screen flex items-center pt-20">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(https://images.unsplash.com/photo-1774014772899-637b8fcbaca0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxpbmRpYSUyMGhpZ2h3YXklMjByb2FkJTIwdHJpcCUyMHNjZW5pYyUyMGpvdXJuZXl8ZW58MXx8fHwxNzc3NjI1Nzg2fDA&ixlib=rb-4.1.0&q=80&w=1080)'
+            }}
+          >
+            <div className="absolute inset-0" style={{ backgroundColor: 'rgba(10, 36, 99, 0.85)' }}></div>
+          </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <h1 className="text-5xl md:text-6xl mb-6 leading-tight" style={{ color: 'white' }}>
-                Reliable Long Distance Travel, <span style={{ color: '#d4af37' }}>Anytime</span>
-              </h1>
-              <p className="text-xl text-white/80 max-w-xl leading-relaxed">
-                Safe, affordable and comfortable rides across cities
-              </p>
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <h1 className="text-5xl md:text-6xl mb-6 leading-tight" style={{ color: 'white' }}>
+                  Reliable Long Distance Travel, <span style={{ color: '#d4af37' }}>Anytime</span>
+                </h1>
+                <p className="text-xl text-white/80 max-w-xl leading-relaxed">
+                  Safe, affordable and comfortable rides across cities
+                </p>
+              </div>
+
+              <div className="order-1 lg:order-2 bg-white rounded-2xl p-8 shadow-2xl">
+                <h2 className="text-2xl mb-2" style={{ color: '#0a2463' }}>Book Your Ride</h2>
+                <p className="text-sm text-gray-500 mb-6">All enquiries are sent directly to team</p>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm mb-2 text-gray-700">Name</label>
+                    <input
+                      id="name"
+                      type="text"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a2463] bg-white"
+                      placeholder="Enter your name"
+                      autoComplete="name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="contact" className="block text-sm mb-2 text-gray-700">Contact Number</label>
+                    <input
+                      id="contact"
+                      type="tel"
+                      value={formData.contact}
+                      onChange={handleNumberInput}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a2463] bg-white"
+                      placeholder="98765 43210"
+                      autoComplete="tel"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="pickup" className="block text-sm mb-2 text-gray-700">Pickup Location</label>
+                    <input
+                      id="pickup"
+                      type="text"
+                      value={formData.pickup}
+                      onChange={(e) => setFormData({ ...formData, pickup: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a2463] bg-white"
+                      placeholder="e.g., Mumbai"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="destination" className="block text-sm mb-2 text-gray-700">Destination</label>
+                    <input
+                      id="destination"
+                      type="text"
+                      value={formData.destination}
+                      onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a2463] bg-white"
+                      placeholder="e.g., Pune"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className={`w-full py-4 rounded-lg transition-all ${loading ? 'cursor-not-allowed opacity-50' : 'hover:opacity-90'}`}
+                    style={{ backgroundColor: '#0a2463', color: 'white' }}
+                    disabled={loading}
+                  >
+                    {loading ? 'Submitting...' : 'Submit Booking'}
+                  </button>
+                </form>
+              </div>
             </div>
+          </div>
+        </section>
 
-            <div className="order-1 lg:order-2 bg-white rounded-2xl p-8 shadow-2xl">
-              <h2 className="text-2xl mb-2" style={{ color: '#0a2463' }}>Book Your Ride</h2>
-              <p className="text-sm text-gray-500 mb-6">All enquiries are sent directly to team</p>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-sm mb-2 text-gray-700">Name</label>
-                  <input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a2463] bg-white"
-                    placeholder="Enter your name"
-                    required
-                  />
+        <section aria-labelledby="highlights-heading" className="py-16 bg-gray-50">
+          <h2 id="highlights-heading" className="sr-only">Service highlights</h2>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid md:grid-cols-3 gap-12">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: '#0a2463' }}>
+                  <CheckCircle className="w-8 h-8 text-white" />
                 </div>
-                <div>
-                  <label className="block text-sm mb-2 text-gray-700">Contact Number</label>
-                  <input
-                    type="tel"
-                    value={formData.contact}
-                    onChange={handleNumberInput}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a2463] bg-white"
-                    placeholder="98765 43210"
-                    required
-                  />
+                <div className="text-3xl mb-2" style={{ color: '#0a2463' }}>500+</div>
+                <div className="text-gray-600">Rides Completed</div>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: '#0a2463' }}>
+                  <Shield className="w-8 h-8 text-white" />
                 </div>
-                <div>
-                  <label className="block text-sm mb-2 text-gray-700">Pickup Location</label>
-                  <input
-                    type="text"
-                    value={formData.pickup}
-                    onChange={(e) => setFormData({...formData, pickup: e.target.value})}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a2463] bg-white"
-                    placeholder="e.g., Mumbai"
-                    required
-                  />
+                <div className="text-3xl mb-2" style={{ color: '#0a2463' }}>Safety First</div>
+                <div className="text-gray-600">Your Safety is Our Priority</div>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: '#0a2463' }}>
+                  <DollarSign className="w-8 h-8 text-white" />
                 </div>
-                <div>
-                  <label className="block text-sm mb-2 text-gray-700">Destination</label>
-                  <input
-                    type="text"
-                    value={formData.destination}
-                    onChange={(e) => setFormData({...formData, destination: e.target.value})}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0a2463] bg-white"
-                    placeholder="e.g., Pune"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className={`w-full py-4 rounded-lg transition-all ${loading ? 'cursor-not-allowed opacity-50' : 'hover:opacity-90'}`}
-                  style={{ backgroundColor: '#0a2463', color: 'white' }}
-                  disabled={loading}
+                <div className="text-3xl mb-2" style={{ color: '#0a2463' }}>Best Price</div>
+                <div className="text-gray-600">Fares Guaranteed</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="fleet" aria-labelledby="fleet-heading" className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 id="fleet-heading" className="text-4xl md:text-5xl text-center mb-4" style={{ color: '#0a2463' }}>
+              Available Cars
+            </h2>
+            <p className="text-center text-gray-600 mb-16 text-lg">
+              Choose from our premium fleet of well-maintained vehicles
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+              {cars.map((car, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
                 >
-                  {loading ? 'Submitting...' : 'Submit Booking'}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: '#0a2463' }}>
-                <CheckCircle className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl mb-2" style={{ color: '#0a2463' }}>500+</div>
-              <div className="text-gray-600">Rides Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: '#0a2463' }}>
-                <Shield className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl mb-2" style={{ color: '#0a2463' }}>Safety First</div>
-              <div className="text-gray-600">Your Safety is Our Priority</div>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: '#0a2463' }}>
-                <DollarSign className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl mb-2" style={{ color: '#0a2463' }}>Best Price</div>
-              <div className="text-gray-600">Fares Guaranteed</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="fleet" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl text-center mb-4" style={{ color: '#0a2463' }}>
-            Available Cars
-          </h2>
-          <p className="text-center text-gray-600 mb-16 text-lg">
-            Choose from our premium fleet of well-maintained vehicles
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
-            {cars.map((car, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={car.image}
-                    alt={car.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={car.image}
+                      alt={`${car.name} taxi - ${car.tag}`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl mb-2" style={{ color: '#0a2463' }}>{car.name}</h3>
+                    <p className="text-sm" style={{ color: '#d4af37' }}>{car.tag}</p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl mb-2" style={{ color: '#0a2463' }}>{car.name}</h3>
-                  <p className="text-sm" style={{ color: '#d4af37' }}>{car.tag}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="about" aria-labelledby="about-heading" className="py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 id="about-heading" className="text-4xl md:text-5xl text-center mb-16" style={{ color: '#0a2463' }}>
+              Why Choose Us
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white shadow-md">
+                  <Users className="w-8 h-8" style={{ color: '#0a2463' }} />
                 </div>
+                <h3 className="text-xl mb-3" style={{ color: '#0a2463' }}>Professional Drivers</h3>
+                <p className="text-gray-600">Experienced and courteous drivers for your comfort</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl text-center mb-16" style={{ color: '#0a2463' }}>
-            Why Choose Us
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white shadow-md">
-                <Users className="w-8 h-8" style={{ color: '#0a2463' }} />
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white shadow-md">
+                  <Clock className="w-8 h-8" style={{ color: '#0a2463' }} />
+                </div>
+                <h3 className="text-xl mb-3" style={{ color: '#0a2463' }}>On-time Pickup</h3>
+                <p className="text-gray-600">Punctual service, every single time</p>
               </div>
-              <h3 className="text-xl mb-3" style={{ color: '#0a2463' }}>Professional Drivers</h3>
-              <p className="text-gray-600">Experienced and courteous drivers for your comfort</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white shadow-md">
-                <Clock className="w-8 h-8" style={{ color: '#0a2463' }} />
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white shadow-md">
+                  <Sparkles className="w-8 h-8" style={{ color: '#0a2463' }} />
+                </div>
+                <h3 className="text-xl mb-3" style={{ color: '#0a2463' }}>Clean & Sanitized</h3>
+                <p className="text-gray-600">Well-maintained and hygienic vehicles</p>
               </div>
-              <h3 className="text-xl mb-3" style={{ color: '#0a2463' }}>On-time Pickup</h3>
-              <p className="text-gray-600">Punctual service, every single time</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white shadow-md">
-                <Sparkles className="w-8 h-8" style={{ color: '#0a2463' }} />
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white shadow-md">
+                  <Car className="w-8 h-8" style={{ color: '#0a2463' }} />
+                </div>
+                <h3 className="text-xl mb-3" style={{ color: '#0a2463' }}>24/7 Availability</h3>
+                <p className="text-gray-600">Round-the-clock service at your convenience</p>
               </div>
-              <h3 className="text-xl mb-3" style={{ color: '#0a2463' }}>Clean & Sanitized</h3>
-              <p className="text-gray-600">Well-maintained and hygienic vehicles</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-white shadow-md">
-                <Car className="w-8 h-8" style={{ color: '#0a2463' }} />
-              </div>
-              <h3 className="text-xl mb-3" style={{ color: '#0a2463' }}>24/7 Availability</h3>
-              <p className="text-gray-600">Round-the-clock service at your convenience</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="pb-10 bg-gray-50 flex items-center justify-center">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.606164610499!2d85.1147814!3d25.5847664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed59003a5bbd63%3A0xe7792101900d40a2!2sMaa%20Lakshmi%20Tour%20And%20Travels!5e0!3m2!1sen!2sin!4v1777649252096!5m2!1sen!2sin" width="1000" height="450" style={{ border: '0' }} loading="lazy"></iframe>
-      </section>
+        <section aria-labelledby="location-heading" className="pb-10 bg-gray-50 flex items-center justify-center px-6">
+          <h2 id="location-heading" className="sr-only">Maa Lakshmi Tour and Travels location map</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.606164610499!2d85.1147814!3d25.5847664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed59003a5bbd63%3A0xe7792101900d40a2!2sMaa%20Lakshmi%20Tour%20And%20Travels!5e0!3m2!1sen!2sin!4v1777649252096!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            className="w-full max-w-5xl rounded-xl shadow-md"
+            style={{ border: '0' }}
+            title="Maa Lakshmi Tour and Travels location on Google Maps"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
 
-      <section className="py-20" style={{ backgroundColor: '#0a2463' }}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl mb-6 text-white">
-            Plan Your Journey Today
-          </h2>
-          <p className="text-xl text-white/80 mb-8">
-            Experience hassle-free long-distance travel with our premium service
-          </p>
-          <a href="#home">
-            <button className="px-10 py-4 rounded-lg text-lg transition-all hover:opacity-90" style={{ backgroundColor: '#d4af37', color: '#0a2463' }}>
-              Book Your Ride
-            </button>
-          </a>
-        </div>
-      </section>
+        <section aria-labelledby="cta-heading" className="py-20" style={{ backgroundColor: '#0a2463' }}>
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 id="cta-heading" className="text-4xl md:text-5xl mb-6 text-white">
+              Plan Your Journey Today
+            </h2>
+            <p className="text-xl text-white/80 mb-8">
+              Experience hassle-free long-distance travel with our premium service
+            </p>
+            <a href="#home">
+              <button className="px-10 py-4 rounded-lg text-lg transition-all hover:opacity-90" style={{ backgroundColor: '#d4af37', color: '#0a2463' }}>
+                Book Your Ride
+              </button>
+            </a>
+          </div>
+        </section>
+      </main>
 
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-6">
